@@ -30,3 +30,7 @@ config.h
 config.h.in~
 my_adduser
 server.log
+prime_calc
+sp_primes.txt
+threaded_primes.txt
+million.txt

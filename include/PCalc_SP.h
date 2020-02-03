@@ -1,12 +1,25 @@
 #ifndef PCALC_SP_H
 #define PCALC_SP_H
 
-#include "PCalc.h"
+#include <PCalc.h>
 
-// Add your PCalc_SP class definition here as a child class of PCalc
-// Be sure to overload the right methods from PCalc or it won't compile
+/************************************************
+ *  PCalc_SP - Child class of PCalc,            *
+ *  Performs a single process, single threaded  *
+ *  implementation of the Sieve of Eratosthenes *
+ ************************************************/
 
-// This class should manage the single process implementation of the prime number generator. I'd recommend
-// getting this working first, then tackling multithreaded
+class PCalc_SP : public PCalc
+{
+    public:
+        //Calls parent constructor to create an array of numbers from 0 to array_size
+        PCalc_SP(unsigned int array_size) : PCalc(array_size) {}
+
+        //Calls parent destructor
+        virtual ~PCalc_SP() {}
+
+        //Marks non prime numbers so they are not included in the final list
+        virtual void markNonPrimes() override; 
+};
 
 #endif
