@@ -13,13 +13,13 @@ class PCalc_SP : public PCalc
 {
     public:
         //Calls parent constructor to create an array of numbers from 0 to array_size
-        PCalc_SP(unsigned int array_size) : PCalc(array_size) {}
+        PCalc_SP( unsigned int array_size ) : PCalc( array_size ) {}
 
         //Calls parent destructor
         virtual ~PCalc_SP() {}
 
         //Marks non prime numbers so they are not included in the final list
-        virtual void markNonPrimes() override; 
+        virtual void markNonPrimes() override;
 };
 
 #endif
