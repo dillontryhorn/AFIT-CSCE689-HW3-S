@@ -3,23 +3,25 @@
 
 #include <PCalc.h>
 
-// Your implementation of PCalc_T class should go here. 
-// Make sure your constructor takes in two parameters:
-
-// PCalc_T::PCalc_T(unsigned int array_size, unsigned int num_threads);
-
-// Call the parent constructor when initializing your constructor and pass in array_size. Then
-// use num_threads to cap off how many threads you use to calculate all prime numbers
+/************************************************
+ *  PCalc_T - Child class of PCalc,             *
+ *  Performs a multi-threaded implementation    *
+ *  of the Sieve of Eratosthenes                *
+ ************************************************/
 
 class PCalc_T : public PCalc
 {
     public:
-        PCalc_T(unsigned int array_size, unsigned int num_thread) : PCalc(array_size), num_thread(num_thread) {}
+        //Calls parent constructor and creates array, stores num_thread in private variable
+        PCalc_T(unsigned int array_size, unsigned int num_threads) : PCalc(array_size), num_threads(num_threads) {}
+        
+        //Calls parent destructor
         virtual ~PCalc_T() {}
 
+        //Marks non prime numbers using multi-threading
         virtual void markNonPrimes() override;
-        private:
-            unsigned int num_thread;
+    private:
+        unsigned int num_threads;
 };
 
 #endif
